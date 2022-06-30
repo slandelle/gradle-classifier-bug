@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation 'io.netty:netty-tcnative-boringssl-static:2.0.53.Final'
+    implementation 'io.netty:netty-handler:4.1.78.Final'
+}
+
+repositories {
+    mavenCentral()
+}
+
+task runWithJavaExec(type: JavaExec) {
+    group = "Execution"
+    description = "Run the main class with JavaExecTask"
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = "Main"
+}
